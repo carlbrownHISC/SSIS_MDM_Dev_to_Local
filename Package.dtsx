@@ -7,12 +7,12 @@
   DTS:CreatorName="PORTAL\carlb"
   DTS:DTSID="{976CC4AE-F57D-47A9-B6A0-EEF91257A0B4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1900.73"
+  DTS:LastModifiedProductVersion="15.0.1900.80"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{18749AE2-80F8-43B2-8759-46DDFA2CE158}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{F4D1502F-F17E-49E1-BF76-A8C9F7A64E12}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH9vgLV1jHkuTeLlZd+6uMgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA11eNHhQCA1Z11C/QOO6Q1TPyo/EMKGPeIIxI57yW6EwAAAAAOgAAAAAIAACAAAACPr2UYiBkZPr7jRQpFbcjsxJj9ybxo+NYrE90MBMa0HUAAAADLOPwiVETel6sfQn6ioae20vlcDbSJqw2/+DDc1EAjYdpParGt0v0gDna47VvadYg/BdLtB/MKQWGj3Pra7AO/QAAAAONqhTIhGnnYABWp4SdR+msYsxeHcqZOsr1MC0qq20SNHy2wjpDs6FSBL/BybQCjvWcCoCMtBoV2Zgl7vNZj2Fw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9D9A1nCb40GO2tazyGi8UwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAjN9pCFSekULlyMBilNen6AAAAAASAAACgAAAAEAAAANH4jQoEJYyPbzA12oI7ORI4AAAAaFHCf4tJnphokcoc2Wi9lJ1Q8dR7HeOyXLzupkP+vlOt68KHV19wJ2whmeG4qBCGgCPcTxoFqWoUAAAAJ55W3gZq1dwI7qu0Yv2fxmy+LWU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -5523,7 +5523,1151 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Caregiver"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{4A0E583A-1E93-4F1E-B710-C345AC19EDDE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Caregiver"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DEST Staging Caregiver 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Staging].[Caregiver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.HISC_MDM_RC1.2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.HISC_MDM_RC1.2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Caregiver_Key]"
+                      cachedDataType="i4"
+                      cachedName="Caregiver_Key"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_Key]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Key]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Caregiver_ID_Alt]"
+                      cachedDataType="i4"
+                      cachedName="Caregiver_ID_Alt"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_ID_Alt]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_ID_Alt]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[First_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="First_Name"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[First_Name]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[First_Name]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Last_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Last_Name"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Last_Name]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Last_Name]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Middle_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Middle_Name"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Middle_Name]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Middle_Name]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Full_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Full_Name"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Full_Name]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Full_Name]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Home_Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Home_Phone"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Home_Phone]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Home_Phone]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Mobile_Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Mobile_Phone"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Mobile_Phone]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Mobile_Phone]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Work_Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Work_Phone"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Work_Phone]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Work_Phone]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Work_Phone_Ext]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Work_Phone_Ext"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Work_Phone_Ext]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Work_Phone_Ext]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Is_Hired]"
+                      cachedDataType="bool"
+                      cachedName="Is_Hired"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Is_Hired]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Is_Hired]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Date_Deactivated]"
+                      cachedDataType="dbDate"
+                      cachedName="Date_Deactivated"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Date_Deactivated]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Date_Deactivated]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Is_Deactivated]"
+                      cachedDataType="bool"
+                      cachedName="Is_Deactivated"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Is_Deactivated]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Is_Deactivated]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Date_of_Birth]"
+                      cachedDataType="dbDate"
+                      cachedName="Date_of_Birth"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Date_of_Birth]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Date_of_Birth]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Caregiver_Datetime_Created]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Caregiver_Datetime_Created"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_Datetime_Created]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Datetime_Created]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Caregiver_Datetime_Updated]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="Caregiver_Datetime_Updated"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_Datetime_Updated]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Datetime_Updated]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Agency_Id]"
+                      cachedDataType="i8"
+                      cachedName="Agency_Id"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Id]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Agency_Id]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[Location_Id]"
+                      cachedDataType="i8"
+                      cachedName="Location_Id"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Location_Id]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Location_Id]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[ETL_Sources]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="ETL_Sources"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Sources]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Sources]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[ETL_Tag]"
+                      cachedDataType="guid"
+                      cachedName="ETL_Tag"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Tag]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Tag]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[ETL_DateTime]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="ETL_DateTime"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_DateTime]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_DateTime]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[ETL_Datetime_Modified]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="ETL_Datetime_Modified"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Datetime_Modified]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Datetime_Modified]" />
+                    <inputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].Columns[ETL_Tag_Modified]"
+                      cachedDataType="guid"
+                      cachedName="ETL_Tag_Modified"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Tag_Modified]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Tag_Modified]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_Key]"
+                      dataType="i4"
+                      name="Caregiver_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_ID_Alt]"
+                      dataType="i4"
+                      name="Caregiver_ID_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[First_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="First_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Last_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Last_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Middle_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Middle_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Full_Name]"
+                      dataType="wstr"
+                      length="101"
+                      name="Full_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="200"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Home_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Home_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Mobile_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Mobile_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Work_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Work_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Work_Phone_Ext]"
+                      dataType="wstr"
+                      length="15"
+                      name="Work_Phone_Ext" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Is_Hired]"
+                      dataType="bool"
+                      name="Is_Hired" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Date_Deactivated]"
+                      dataType="dbDate"
+                      name="Date_Deactivated" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Is_Deactivated]"
+                      dataType="bool"
+                      name="Is_Deactivated" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Date_of_Birth]"
+                      dataType="dbDate"
+                      name="Date_of_Birth" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="20"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_Datetime_Created]"
+                      dataType="dbTimeStamp2"
+                      name="Caregiver_Datetime_Created"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Caregiver_Datetime_Updated]"
+                      dataType="dbTimeStamp2"
+                      name="Caregiver_Datetime_Updated"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Id]"
+                      dataType="i8"
+                      name="Agency_Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[Location_Id]"
+                      dataType="i8"
+                      name="Location_Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Sources]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ETL_Sources" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Tag]"
+                      dataType="guid"
+                      name="ETL_Tag" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_DateTime]"
+                      dataType="dbTimeStamp2"
+                      name="ETL_DateTime"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Datetime_Modified]"
+                      dataType="dbTimeStamp2"
+                      name="ETL_Datetime_Modified"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input].ExternalColumns[ETL_Tag_Modified]"
+                      dataType="guid"
+                      name="ETL_Tag_Modified" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF Staging Caregiver\SRC Staging Caregiver"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SRC Staging Caregiver"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Staging].[Caregiver]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[asql-enterprise-data-dev.database.windows.net.HISC_MDM_RC1.cgoa]"
+                  connectionManagerRefId="Package.ConnectionManagers[asql-enterprise-data-dev.database.windows.net.HISC_MDM_RC1.cgoa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_Key]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Key]"
+                      name="Caregiver_Key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_ID_Alt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_ID_Alt]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_ID_Alt]"
+                      name="Caregiver_ID_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[First_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[First_Name]"
+                      length="50"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[First_Name]"
+                      name="First_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Last_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Last_Name]"
+                      length="50"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Last_Name]"
+                      name="Last_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Middle_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Middle_Name]"
+                      length="50"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Middle_Name]"
+                      name="Middle_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Full_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Full_Name]"
+                      length="101"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Full_Name]"
+                      name="Full_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      length="200"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Home_Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Home_Phone]"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Home_Phone]"
+                      name="Home_Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Mobile_Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Mobile_Phone]"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Mobile_Phone]"
+                      name="Mobile_Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Work_Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Work_Phone]"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Work_Phone]"
+                      name="Work_Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Work_Phone_Ext]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Work_Phone_Ext]"
+                      length="15"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Work_Phone_Ext]"
+                      name="Work_Phone_Ext"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Is_Hired]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Is_Hired]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Is_Hired]"
+                      name="Is_Hired"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Date_Deactivated]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Date_Deactivated]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Date_Deactivated]"
+                      name="Date_Deactivated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Is_Deactivated]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Is_Deactivated]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Is_Deactivated]"
+                      name="Is_Deactivated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Date_of_Birth]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Date_of_Birth]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Date_of_Birth]"
+                      name="Date_of_Birth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Datetime_Created]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_Datetime_Created]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Datetime_Created]"
+                      name="Caregiver_Datetime_Created"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Datetime_Updated]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_Datetime_Updated]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Caregiver_Datetime_Updated]"
+                      name="Caregiver_Datetime_Updated"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Agency_Id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Agency_Id]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Agency_Id]"
+                      name="Agency_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Location_Id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Location_Id]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[Location_Id]"
+                      name="Location_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Sources]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Sources]"
+                      length="500"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Sources]"
+                      name="ETL_Sources"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Tag]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Tag]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Tag]"
+                      name="ETL_Tag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_DateTime]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_DateTime]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_DateTime]"
+                      name="ETL_DateTime"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Datetime_Modified]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Datetime_Modified]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Datetime_Modified]"
+                      name="ETL_Datetime_Modified"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Tag_Modified]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Tag_Modified]"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].Columns[ETL_Tag_Modified]"
+                      name="ETL_Tag_Modified"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_Key]"
+                      dataType="i4"
+                      name="Caregiver_Key" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_ID_Alt]"
+                      dataType="i4"
+                      name="Caregiver_ID_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[First_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="First_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Last_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Last_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Middle_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Middle_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Full_Name]"
+                      dataType="wstr"
+                      length="101"
+                      name="Full_Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="200"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Home_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Home_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Mobile_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Mobile_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Work_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Work_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Work_Phone_Ext]"
+                      dataType="wstr"
+                      length="15"
+                      name="Work_Phone_Ext" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Is_Hired]"
+                      dataType="bool"
+                      name="Is_Hired" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Date_Deactivated]"
+                      dataType="dbDate"
+                      name="Date_Deactivated" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Is_Deactivated]"
+                      dataType="bool"
+                      name="Is_Deactivated" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Date_of_Birth]"
+                      dataType="dbDate"
+                      name="Date_of_Birth" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="20"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_Datetime_Created]"
+                      dataType="dbTimeStamp2"
+                      name="Caregiver_Datetime_Created"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Caregiver_Datetime_Updated]"
+                      dataType="dbTimeStamp2"
+                      name="Caregiver_Datetime_Updated"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Agency_Id]"
+                      dataType="i8"
+                      name="Agency_Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[Location_Id]"
+                      dataType="i8"
+                      name="Location_Id" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Sources]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="ETL_Sources" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Tag]"
+                      dataType="guid"
+                      name="ETL_Tag" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_DateTime]"
+                      dataType="dbTimeStamp2"
+                      name="ETL_DateTime"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Datetime_Modified]"
+                      dataType="dbTimeStamp2"
+                      name="ETL_Datetime_Modified"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output].ExternalColumns[ETL_Tag_Modified]"
+                      dataType="guid"
+                      name="ETL_Tag_Modified" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_Key]"
+                      dataType="i4"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_Key]"
+                      name="Caregiver_Key" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_ID_Alt]"
+                      dataType="i4"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_ID_Alt]"
+                      name="Caregiver_ID_Alt" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[First_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[First_Name]"
+                      name="First_Name" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Last_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Last_Name]"
+                      name="Last_Name" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Middle_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Middle_Name]"
+                      name="Middle_Name" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Full_Name]"
+                      dataType="wstr"
+                      length="101"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Full_Name]"
+                      name="Full_Name" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Home_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Home_Phone]"
+                      name="Home_Phone" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Mobile_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Mobile_Phone]"
+                      name="Mobile_Phone" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Work_Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Work_Phone]"
+                      name="Work_Phone" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Work_Phone_Ext]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Work_Phone_Ext]"
+                      name="Work_Phone_Ext" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Is_Hired]"
+                      dataType="bool"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Is_Hired]"
+                      name="Is_Hired" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Date_Deactivated]"
+                      dataType="dbDate"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Date_Deactivated]"
+                      name="Date_Deactivated" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Is_Deactivated]"
+                      dataType="bool"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Is_Deactivated]"
+                      name="Is_Deactivated" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Date_of_Birth]"
+                      dataType="dbDate"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Date_of_Birth]"
+                      name="Date_of_Birth" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_Datetime_Created]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_Datetime_Created]"
+                      name="Caregiver_Datetime_Created"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_Datetime_Updated]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Caregiver_Datetime_Updated]"
+                      name="Caregiver_Datetime_Updated"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Agency_Id]"
+                      dataType="i8"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Agency_Id]"
+                      name="Agency_Id" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Location_Id]"
+                      dataType="i8"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[Location_Id]"
+                      name="Location_Id" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Sources]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Sources]"
+                      name="ETL_Sources" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Tag]"
+                      dataType="guid"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Tag]"
+                      name="ETL_Tag" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_DateTime]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_DateTime]"
+                      name="ETL_DateTime"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Datetime_Modified]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Datetime_Modified]"
+                      name="ETL_Datetime_Modified"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Tag_Modified]"
+                      dataType="guid"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ETL_Tag_Modified]"
+                      name="ETL_Tag_Modified" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF Staging Caregiver.Paths[OLE DB Source Output]"
+              endId="Package\DF Staging Caregiver\DEST Staging Caregiver 1.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DF Staging Caregiver\SRC Staging Caregiver.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Caregiver Location Bridge"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C5C90340-FD69-43F8-BC60-06AAE00F34DA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Caregiver Location Bridge"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Client"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DDD8A2B4-0DA0-4CC5-B54E-363DDC9D3CB1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Client"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Client Location Bridge"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BF83E41C-DF4F-40E9-BDDA-8742D9BC434F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Client Location Bridge"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Franchise"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{72F718F3-A688-4412-B3C3-B61C7F82BDF0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Franchise"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Location"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1ADA54CA-9B87-44C9-ACDA-AD5FAAA95582}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Location"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DF Staging Profile_Patient_AgencyLocation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2877E67C-C8D6-4DE7-8AE8-EA99069C335E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF Staging Profile_Patient_AgencyLocation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging Caregiver Franchise Bridge"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0ACA8133-E9A7-4433-8938-43FA02209047}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging Caregiver Franchise Bridge"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Staging Client Franchise Bridge"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{96DAEBBA-5390-43DC-929B-4572F98264CC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Staging Client Franchise Bridge"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate SRC Staging Caregiver"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{8ACA3939-4658-45DC-9BF3-73D5D4337353}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate SRC Staging Caregiver"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{14BCA67C-6A48-43F5-94A4-C6F64FDA844D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [Staging].[Caregiver];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{726DA06F-7A19-4BE2-8A42-69CD520C46EC}"
+      DTS:From="Package\Truncate SRC Staging Caregiver"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DF Staging Caregiver" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -5535,43 +6679,144 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="185,42"
           Id="Package\DF Domain Caregiver"
-          TopLeft="36,45" />
+          TopLeft="5.5,6.5" />
         <NodeLayout
           Size="186,42"
           Id="Package\DF Domain Franchise"
-          TopLeft="253,45" />
+          TopLeft="222.5,6.5" />
         <NodeLayout
           Size="179,42"
           Id="Package\DF Domain Location"
-          TopLeft="488,46" />
+          TopLeft="457.5,7.5" />
         <NodeLayout
           Size="169,42"
           Id="Package\DF Domain Phone"
-          TopLeft="713,44" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\DF Domain Person"
-          TopLeft="38,102" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\DF Domain Email"
-          TopLeft="241,107" />
-        <NodeLayout
-          Size="250,42"
-          Id="Package\DF Relationship Party Relationship"
-          TopLeft="43,238" />
-        <NodeLayout
-          Size="266,42"
-          Id="Package\DF Relationship Location Relationship"
-          TopLeft="296,239" />
+          TopLeft="682.5,5.5" />
         <NodeLayout
           Size="172,42"
           Id="Package\DF Domain Source"
-          TopLeft="422,105" />
+          TopLeft="391.5,66.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DF Domain Person"
+          TopLeft="7.5,63.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DF Domain Email"
+          TopLeft="210.5,68.5" />
+        <GroupLayout
+          Text="Domain Schema"
+          ParentId="Package"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="856,166"
+          Size="856,208"
+          Id="a242da76-8c74-452f-be42-5f48daab8f3d"
+          TopLeft="65.5,5.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\DF Domain Caregiver</s:String>
+            <s:String>Package\DF Domain Franchise</s:String>
+            <s:String>Package\DF Domain Location</s:String>
+            <s:String>Package\DF Domain Phone</s:String>
+            <s:String>Package\DF Domain Source</s:String>
+            <s:String>Package\DF Domain Person</s:String>
+            <s:String>Package\DF Domain Email</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="266,42"
+          Id="Package\DF Relationship Location Relationship"
+          TopLeft="299.5,5.5" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\DF Relationship Party Relationship"
+          TopLeft="5.5,5.5" />
+        <GroupLayout
+          Text="Relationship Schema"
+          ParentId="Package"
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="570,102"
+          Size="570,145"
+          Id="bfc3703c-7daa-4fed-bd61-b44fa4c01409"
+          TopLeft="55.5,263.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\DF Relationship Location Relationship</s:String>
+            <s:String>Package\DF Relationship Party Relationship</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\DF Staging Client"
+          TopLeft="539,463" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DF Staging Franchise"
+          TopLeft="345,467" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\DF Staging Location"
+          TopLeft="648,514" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\DF Staging Profile_Patient_AgencyLocation"
+          TopLeft="354,517" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Staging Caregiver Franchise Bridge"
+          TopLeft="73,607" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\DF Staging Caregiver Location Bridge"
+          TopLeft="332,610" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Staging Client Franchise Bridge"
+          TopLeft="84,667" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\DF Staging Client Location Bridge"
+          TopLeft="344,663" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="153.5,514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.5,11"
+              Start="0,0"
+              End="84,11">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7"
+                    Point2="0,11"
+                    Point3="4,11" />
+                  <mssgle:LineSegment
+                    End="84,11" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Truncate SRC Staging Caregiver"
+          TopLeft="39,472" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DF Staging Caregiver"
+          TopLeft="67,504" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5579,7 +6824,7 @@
     design-time-name="Package\DF Domain Caregiver">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="194,42"
           Id="Package\DF Domain Caregiver\SRC Domain Caregiver"
@@ -5619,25 +6864,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Caregiver\SRC Domain Caregiver">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DF Domain Caregiver\DEST Domain Caregiver">
     <Properties>
@@ -5651,275 +6885,8 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DF Domain Franchise">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="194,42"
-          Id="Package\DF Domain Franchise\SRC Domain Franchise"
-          TopLeft="156,102" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\DF Domain Franchise\DEST Domain Franchise"
-          TopLeft="192,264" />
-        <EdgeLayout
-          Id="Package\DF Domain Franchise.Paths[OLE DB Source Output]"
-          TopLeft="253,144">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39.5,120"
-              Start="0,0"
-              End="39.5,112.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,56"
-                    Point2="0,60"
-                    Point3="4,60" />
-                  <mssgle:LineSegment
-                    End="35.5,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.5,60"
-                    Point2="39.5,60"
-                    Point3="39.5,64" />
-                  <mssgle:LineSegment
-                    End="39.5,112.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Franchise\SRC Domain Franchise">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Franchise\DEST Domain Franchise">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DF Domain Location">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="188,42"
-          Id="Package\DF Domain Location\SRC Domain Location"
-          TopLeft="150,93" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\DF Domain Location\DEST Domain Location"
-          TopLeft="138,217" />
-        <EdgeLayout
-          Id="Package\DF Domain Location.Paths[OLE DB Source Output]"
-          TopLeft="244,135">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9,82"
-              Start="0,0"
-              End="-9,74.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37"
-                    Point2="0,41"
-                    Point3="-4,41" />
-                  <mssgle:LineSegment
-                    End="-5,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5,41"
-                    Point2="-9,41"
-                    Point3="-9,45" />
-                  <mssgle:LineSegment
-                    End="-9,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Location\SRC Domain Location">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Location\DEST Domain Location">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DF Domain Phone">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="178,42"
-          Id="Package\DF Domain Phone\SRC Domain Phone"
-          TopLeft="151,72" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DF Domain Phone\DEST Domain Phone"
-          TopLeft="146,192" />
-        <EdgeLayout
-          Id="Package\DF Domain Phone.Paths[OLE DB Source Output]"
-          TopLeft="239,114">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,78"
-              Start="0,0"
-              End="0,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Phone\SRC Domain Phone">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Phone\DEST Domain Phone">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DF Domain Person">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\DF Domain Person\SRC Domain Person"
-          TopLeft="166,73" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\DF Domain Person\DEST Domain Person"
-          TopLeft="166,235" />
-        <EdgeLayout
-          Id="Package\DF Domain Person.Paths[OLE DB Source Output]"
-          TopLeft="258,115">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,120"
-              Start="0,0"
-              End="0,112.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,112.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Person\SRC Domain Person">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Person\DEST Domain Person">
+    design-time-name="Package\DF Domain Caregiver\SRC Domain Caregiver">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5935,7 +6902,7 @@
     design-time-name="Package\DF Domain Email">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="174,42"
           Id="Package\DF Domain Email\SRC Domain Email"
@@ -5975,25 +6942,14 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Email\SRC Domain Email">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DF Domain Email\DEST Domain Email">
     <Properties>
@@ -6007,46 +6963,73 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Domain Email\SRC Domain Email">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DF Relationship Party Relationship">
+    design-time-name="Package\DF Domain Franchise">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="194,42"
-          Id="Package\DF Relationship Party Relationship\SRC Party Relationship"
-          TopLeft="154,58" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="201,42"
-          Id="Package\DF Relationship Party Relationship\DEST Party Relationship"
-          TopLeft="155,173" />
+          Id="Package\DF Domain Franchise\DEST Domain Franchise"
+          TopLeft="192,264" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DF Domain Franchise\SRC Domain Franchise"
+          TopLeft="156,102" />
         <EdgeLayout
-          Id="Package\DF Relationship Party Relationship.Paths[OLE DB Source Output]"
-          TopLeft="253.25,100">
+          Id="Package\DF Domain Franchise.Paths[OLE DB Source Output]"
+          TopLeft="253,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73"
+              EndConnector="39.5,120"
               Start="0,0"
-              End="0,65.5">
+              End="39.5,112.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.5" />
+                    End="0,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56"
+                    Point2="0,60"
+                    Point3="4,60" />
+                  <mssgle:LineSegment
+                    End="35.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.5,60"
+                    Point2="39.5,60"
+                    Point3="39.5,64" />
+                  <mssgle:LineSegment
+                    End="39.5,112.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Relationship Party Relationship\SRC Party Relationship">
+    design-time-name="Package\DF Domain Franchise\DEST Domain Franchise">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6059,7 +7042,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Relationship Party Relationship\DEST Party Relationship">
+    design-time-name="Package\DF Domain Franchise\SRC Domain Franchise">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6072,57 +7055,59 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DF Relationship Location Relationship">
+    design-time-name="Package\DF Domain Location">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
-          Id="Package\DF Relationship Location Relationship\OLE DB Source"
-          TopLeft="211,70" />
+          Size="194,42"
+          Id="Package\DF Domain Location\DEST Domain Location"
+          TopLeft="138,217" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\DF Relationship Location Relationship\OLE DB Destination"
-          TopLeft="211,267" />
+          Size="188,42"
+          Id="Package\DF Domain Location\SRC Domain Location"
+          TopLeft="150,93" />
         <EdgeLayout
-          Id="Package\DF Relationship Location Relationship.Paths[OLE DB Source Output]"
-          TopLeft="289.5,112">
+          Id="Package\DF Domain Location.Paths[OLE DB Source Output]"
+          TopLeft="244,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10,155"
+              EndConnector="-9,82"
               Start="0,0"
-              End="10,147.5">
+              End="-9,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.5" />
+                    End="0,37" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,73.5"
-                    Point2="0,77.5"
-                    Point3="4,77.5" />
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="-4,41" />
                   <mssgle:LineSegment
-                    End="6,77.5" />
+                    End="-5,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="6,77.5"
-                    Point2="10,77.5"
-                    Point3="10,81.5" />
+                    Point1="-5,41"
+                    Point2="-9,41"
+                    Point3="-9,45" />
                   <mssgle:LineSegment
-                    End="10,147.5" />
+                    End="-9,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Relationship Location Relationship\OLE DB Source">
+    design-time-name="Package\DF Domain Location\DEST Domain Location">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6135,7 +7120,139 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Relationship Location Relationship\OLE DB Destination">
+    design-time-name="Package\DF Domain Location\SRC Domain Location">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF Domain Person">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\DF Domain Person\DEST Domain Person"
+          TopLeft="166,235" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\DF Domain Person\SRC Domain Person"
+          TopLeft="166,73" />
+        <EdgeLayout
+          Id="Package\DF Domain Person.Paths[OLE DB Source Output]"
+          TopLeft="258,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,120"
+              Start="0,0"
+              End="0,112.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,112.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Domain Person\DEST Domain Person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Domain Person\SRC Domain Person">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF Domain Phone">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DF Domain Phone\SRC Domain Phone"
+          TopLeft="151,72" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DF Domain Phone\DEST Domain Phone"
+          TopLeft="146,192" />
+        <EdgeLayout
+          Id="Package\DF Domain Phone.Paths[OLE DB Source Output]"
+          TopLeft="239,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Domain Phone\DEST Domain Phone">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Domain Phone\SRC Domain Phone">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6151,15 +7268,15 @@
     design-time-name="Package\DF Domain Source">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="181,42"
-          Id="Package\DF Domain Source\SRC Domain Source"
-          TopLeft="148,94" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="187,42"
           Id="Package\DF Domain Source\DEST Domain Source"
           TopLeft="179,234" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\DF Domain Source\SRC Domain Source"
+          TopLeft="148,94" />
         <EdgeLayout
           Id="Package\DF Domain Source.Paths[OLE DB Source Output]"
           TopLeft="238.5,136">
@@ -6191,12 +7308,27 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Domain Source\DEST Domain Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DF Domain Source\SRC Domain Source">
     <Properties>
@@ -6210,8 +7342,202 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF Relationship Location Relationship">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DF Relationship Location Relationship\OLE DB Destination"
+          TopLeft="211,267" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DF Relationship Location Relationship\OLE DB Source"
+          TopLeft="211,70" />
+        <EdgeLayout
+          Id="Package\DF Relationship Location Relationship.Paths[OLE DB Source Output]"
+          TopLeft="289.5,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,155"
+              Start="0,0"
+              End="10,147.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,73.5"
+                    Point2="0,77.5"
+                    Point3="4,77.5" />
+                  <mssgle:LineSegment
+                    End="6,77.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,77.5"
+                    Point2="10,77.5"
+                    Point3="10,81.5" />
+                  <mssgle:LineSegment
+                    End="10,147.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DF Domain Source\DEST Domain Source">
+    design-time-name="Package\DF Relationship Location Relationship\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Relationship Location Relationship\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF Relationship Party Relationship">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="201,42"
+          Id="Package\DF Relationship Party Relationship\DEST Party Relationship"
+          TopLeft="155,173" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DF Relationship Party Relationship\SRC Party Relationship"
+          TopLeft="154,58" />
+        <EdgeLayout
+          Id="Package\DF Relationship Party Relationship.Paths[OLE DB Source Output]"
+          TopLeft="253.25,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Relationship Party Relationship\DEST Party Relationship">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Relationship Party Relationship\SRC Party Relationship">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DF Staging Caregiver">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DF Staging Caregiver\SRC Staging Caregiver"
+          TopLeft="373,226" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\DF Staging Caregiver\DEST Staging Caregiver 1"
+          TopLeft="387,406" />
+        <EdgeLayout
+          Id="Package\DF Staging Caregiver.Paths[OLE DB Source Output]"
+          TopLeft="465,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22,138"
+              Start="0,0"
+              End="22,130.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65"
+                    Point2="0,69"
+                    Point3="4,69" />
+                  <mssgle:LineSegment
+                    End="18,69" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18,69"
+                    Point2="22,69"
+                    Point3="22,73" />
+                  <mssgle:LineSegment
+                    End="22,130.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF Staging Caregiver\SRC Staging Caregiver">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
